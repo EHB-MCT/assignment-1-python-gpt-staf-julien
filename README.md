@@ -1,5 +1,5 @@
-# Your project name
-A short description of your project. 
+# ChatPy
+A simple chat back-end REST API built with Python, supporting human-to-human chat rooms and providing flexibility for future integration of bots and additional features. 
 
 Next, read this example and adapt it to your project.
 
