@@ -14,3 +14,13 @@ class UserController:
     def get_users(self):
         users = self.user_service.get_all_users()
         return jsonify(users), 200
+    
+    def create_user(self, name, email):
+        # required fields
+        if not name:
+            return jsonify({"error": "Empty name field"}), 400
+        if not email:
+            return jsonify({"error": "Empty email field"}), 400
+        
+        user = self.user_service.create_user(name, email)
+        return user

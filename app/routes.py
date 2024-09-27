@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request, jsonify
 
 # import controllers
 from app.controllers.user_controller import UserController
@@ -28,3 +28,14 @@ def get_users():
 def get_user(user_id):
     """Returns a single user by ID."""
     return user_controller.get_user(user_id)
+
+# only accepts json as req body
+@app.route('/user/create',  methods=['POST'])
+def create_user():
+    """lets you create an user"""
+    data = request.get_json()
+    if data:
+        return user_controller.create_user(data['name'], data['email']), 200
+    else:
+        return jsonify({"error": "Empty body"}), 400
+    
