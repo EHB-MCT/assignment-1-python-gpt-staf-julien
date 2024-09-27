@@ -38,4 +38,3 @@ def create_user():
         return user_controller.create_user(data['name'], data['email']), 200
     else:
         return jsonify({"error": "Empty body"}), 400
-    

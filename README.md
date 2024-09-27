@@ -10,7 +10,10 @@ A simple chat back-end REST API built with Python, supporting human-to-human cha
 
 ## API endpoints
 
+`/helloworld` reques type:`GET/POST`
+Returing hello world
 
+`/`
 
 ### sources for conventions
 
