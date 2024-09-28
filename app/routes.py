@@ -35,6 +35,24 @@ def create_user():
     """lets you create an user"""
     data = request.get_json()
     if data:
-        return user_controller.create_user(data['name'], data['email']), 200
+        return user_controller.create_user(data['name'], data['email'])
+    else:
+        return jsonify({"error": "Empty body"}), 400
+
+@app.route('/user/update', methods=['PUT'])
+def update_user():
+    """lets you update an user"""
+    data = request.get_json()
+    if data:
+        return user_controller.update_user(data['id'], data['name'], data['email'])
+    else:
+        return jsonify({"error": "Empty body"}), 400
+
+@app.route('/user/delete', methods=['DELETE'])
+def delete_user():
+    """lets you delete an user"""
+    data = request.get_json()
+    if data:
+        return user_controller.delete_user(data['id'])
     else:
         return jsonify({"error": "Empty body"}), 400
