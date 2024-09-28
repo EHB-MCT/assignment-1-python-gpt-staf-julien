@@ -1,7 +1,5 @@
 # ChatPy
-A simple chat back-end REST API built with Python, supporting human-to-human chat rooms and providing flexibility for future integration of bots and additional features. 
-
-
+A simple chat back-end REST API template built with Python trying to follow the PEP8 standard and other conventions.
 
 ## Up & running (optional)
 1. Open your terminal (inside VSC or PowerShel).
@@ -10,10 +8,31 @@ A simple chat back-end REST API built with Python, supporting human-to-human cha
 
 ## API endpoints
 
-`/helloworld` reques type:`GET/POST`
-Returing hello world
+### Users
+#### GET /users
+- Returns a list of all users in the system.
 
-`/`
+#### POST /users
+- Creates a new user.
+* Parameters:
+    + **name** (str): The name of the user.
+    + **email** (str): The email address of the user.
+
+#### GET /users/{user_id}
+- Retrieves information about a specific user by ID.
+
+#### PUT /users/{user_id}
+- Updates information about a specific user by ID.
+  * Parameters:
+    + **name** (str): The updated name of the user.
+    + **email** (str): The updated email address of the user.
+
+#### DELETE /users/{user_id}
+- Deletes a specific user by ID.
+  * Parameters:
+    + **user_id** (int): The ID of the user to delete.
+
+## sources
 
 ### sources for conventions
 
