@@ -26,3 +26,20 @@ class UserService:
         self.users[new_user_id] = {'name': name, 'email': email}
         self.next_id += 1
         return self.users[new_user_id]
+    
+    def update_user(self, user_id, name=None, email=None):
+        # Update an existing user in the in-memory store.
+        if user_id not in self.users:
+            return False
+        if name is not None:
+            self.users[user_id]['name'] = name
+            if email is not None:
+                self.users[user_id]['email'] = email
+                return True
+    
+    def delete_user(self, user_id):
+        # Delete an existing user from the in-memory store.
+        if user_id in self.users:
+            del self.users[user_id]
+            return True
+        return False
