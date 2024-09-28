@@ -24,3 +24,21 @@ class UserController:
         
         user = self.user_service.create_user(name, email)
         return user
+
+    def update_user(self, user_id, name=None, email=None):
+        if not name and not email:
+            return jsonify({"error": "No data to update"}), 400
+        
+        user = self.user_service.update_user(user_id, name, email)
+        if user:
+            return jsonify(user), 200
+    
+    def delete_user(self, user_id):
+        if not user_id:
+            return jsonify({"error": "No user id provided"}), 400
+        
+        result = self.user_service.delete_user(user_id)
+        if result:
+            return jsonify({"message": "User deleted successfully"}), 200
+        else:
+            return jsonify({"error": "User not deleted"}), 404
