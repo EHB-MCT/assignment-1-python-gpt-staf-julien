@@ -3,7 +3,7 @@ A simple chat back-end REST API template built with Python trying to follow the 
 
 ## Up & running (optional)
 1. Open your terminal (inside VSC or PowerShel).
-2. add this comment tin the termiinal : `pip install -r ./requirements.txt`.
+2. add this comment tin the terminal : `pip install -r ./requirements.txt`.
 3. Run the project with this : `python main.py`
 
 ## API endpoints
