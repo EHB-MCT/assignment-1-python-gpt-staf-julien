@@ -1,6 +1,8 @@
 from app.views import app
 import logging
 
+app.config['DEBUG']
+
 logging.basicConfig(filename="flask_server.log", level=logging.INFO)
 
 if __name__ == "__main__":
