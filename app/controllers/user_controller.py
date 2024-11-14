@@ -63,26 +63,6 @@ def delete_user():
 
     # required fields
     if not user_id:
-        return jsonify({"error": "Missing required field 'user_id'"}), 400
-
-    # required fields
-    if not name and not email:
-        return jsonify({"error": "No data to update"}), 400
-    
-    user = user_service.delete_user(user_id)
-    if user:
-        return jsonify(user), 200
-    else:
-        return jsonify({"error": "User not found"}), 404
-
-@user_controller_bp.route('/user/delete', methods=['DELETE'])
-def delete_user():
-    data = request.get_json()
-
-    user_id = data['user_id']
-
-    # required fields
-    if not user_id:
         return jsonify({"error": "No user id provided"}), 400
     
     result = user_service.delete_user(user_id)
