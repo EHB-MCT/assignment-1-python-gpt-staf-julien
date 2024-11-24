@@ -7,6 +7,7 @@ user_controller_bp = Blueprint('user', __name__)
 
 @user_controller_bp.route('/users/<user_id>', methods=['GET'])
 def get_user(user_id):
+    """Return user data by id"""
     user = user_service.get_user_by_id(user_id)
     if user:
         return jsonify(user), 200
@@ -14,12 +15,14 @@ def get_user(user_id):
 
 @user_controller_bp.route('/users', methods=['GET'])
 def get_users():
+    """Returns all user data"""
     users = user_service.get_all_users()
     return jsonify(users), 200
 
 # only accepts json as req body
 @user_controller_bp.route('/user/create',  methods=['POST'])
 def create_user():
+    """Create a new user with name and email"""
     data = request.get_json()
 
     name = data['name']
@@ -35,6 +38,7 @@ def create_user():
 
 @user_controller_bp.route('/user/update', methods=['PUT'])
 def update_user():
+    """Update a user their name and email by id"""
     data = request.get_json()
 
     user_id = data['user_id']
@@ -57,6 +61,7 @@ def update_user():
 
 @user_controller_bp.route('/user/delete', methods=['DELETE'])
 def delete_user():
+    """Delete a user by id"""
     data = request.get_json()
 
     user_id = data['user_id']
