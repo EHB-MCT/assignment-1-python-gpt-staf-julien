@@ -32,6 +32,11 @@ This document outlines the project structure and conventions for our Flask appli
 * Contains model classes that represent data structures used in the application.
 * Each model class should have its own file, e.g. `user.py`.
 
+### schemas
+
+* Contains classes that define data validation schemas for the application.
+* Each set of schemas should have its own module, e.g. `user_schemas.py`.
+
 ### repositories
 
 * Contains classes that encapsulate data access and manipulation logic.
