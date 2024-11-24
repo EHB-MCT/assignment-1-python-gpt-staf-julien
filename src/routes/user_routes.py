@@ -1,4 +1,4 @@
-from app.services.user_service import UserService
+from src.services.user_service import UserService
 from flask import jsonify, Blueprint, request
 
 user_service = UserService()

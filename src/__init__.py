@@ -2,7 +2,7 @@ from flask import Flask
 
 # importing the blueprints from the respective modules
 from .controllers.user_controller import user_controller_bp
-from .views import user_bp
+from .routes.static_routes import user_bp
 
 def create_app():
     """
