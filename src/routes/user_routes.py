@@ -1,5 +1,7 @@
+from pydantic import ValidationError
 from src.repositories.user_repository import UserRepository
 from flask import jsonify, Blueprint, request
+from schemas.user_schema import CreateUserRequest, UpdateUserRequest
 
 user_service = UserRepository()
 
@@ -22,38 +24,43 @@ def get_users():
 # only accepts json as req body
 @user_controller_bp.route('/user/create',  methods=['POST'])
 def create_user():
-    """Create a new user with name and email"""
-    data = request.get_json()
+    """Create a new user with name and email."""
+    try:
+        # Parse and validate the incoming JSON request
+        data = request.get_json()
+        validated_data = CreateUserRequest(**data)
+    except ValidationError as e:
+        # Return validation errors in case of invalid data
+        return jsonify({"errors": e.errors()}), 400
+    except Exception as e:
+        # Handle missing or malformed JSON
+        return jsonify({"error": str(e)}), 400
 
-    name = data['name']
-    email = data['email']
-
-    # required fields
-    if not name or not email:
-        return jsonify({"error": "Missing required fields"}), 400
-
-    # required fields
-    user = user_service.create_user(name, email)
-    return user
+    # Use the validated data to create a user
+    user = user_service.create_user(validated_data.name, validated_data.email)
+    return jsonify(user), 201
 
 @user_controller_bp.route('/user/update', methods=['PUT'])
 def update_user():
-    """Update a user their name and email by id"""
-    data = request.get_json()
+    """Update a user's name and/or email by ID."""
+    try:
+        # Parse and validate the incoming JSON request
+        data = request.get_json()
+        validated_data = UpdateUserRequest(**data)
+    except ValidationError as e:
+        # Return validation errors in case of invalid data
+        return jsonify({"errors": e.errors()}), 400
+    except Exception as e:
+        # Handle missing or malformed JSON
+        return jsonify({"error": str(e)}), 400
 
-    user_id = data['user_id']
-
-    name = data.get('name')
-    email = data.get('email')
-
-    # required fields
-    if not user_id:
-        return jsonify({"error": "Missing required field 'user_id'"}), 400
-    # required fields
-    if not name and not email:
-        return jsonify({"error": "No data to update"}), 400
+    # Perform the update using the validated data
+    user = user_service.update_user(
+        validated_data.user_id, 
+        validated_data.name, 
+        validated_data.email
+    )
     
-    user = user_service.update_user(user_id, name, email)
     if user:
         return jsonify(user), 200
     else:
