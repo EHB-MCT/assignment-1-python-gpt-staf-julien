@@ -60,7 +60,7 @@ def update_user():
         validated_data.name, 
         validated_data.email
     )
-    
+
     if user:
         return jsonify(user), 200
     else:
