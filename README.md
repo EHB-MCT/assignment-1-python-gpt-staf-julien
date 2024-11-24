@@ -1,33 +1,47 @@
-# flask-template
+# Flask Template
 
-A simple chat back-end REST API template built with Python trying to follow the PEP8 standard and other conventions.
+A simple back-end REST API template built with Python and adhering to PEP8 standards.
+
+## Table of Contents
+
+* [Installation](#installation)
+* [Usage](#usage)
+* [Support](#support)
+* [Contributing](#contributing)
+* [License](#license)
+* [Sources Used](#sources-used)
 
 ## Installation
 
-1. Open your terminal (inside VSC or PowerShel).
-2. add this comment tin the terminal : `pip install -r ./requirements.txt`.
+To get started, follow these steps:
+
+1. Open your terminal (inside VSC or PowerShell).
+2. Run the following command to install dependencies: `pip install -r ./requirements.txt`.
 
 ## Usage
 
-0. Follow the installation steps above.
-1. Run the project with this : `python main.py`
+To run the project, execute the following command:
+```bash
+python main.py
+```
 
 ## Support
 
-If you have any questions or need help, feel free to reach out!
-The best way to reach out is through GitHub issues.
+Having trouble? Reach out!
+
+The best way to get help is by opening an issue on GitHub.
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+We welcome your contributions! Before making any changes, please:
 
-Please make sure to update tests as appropriate.
+1. Open a new issue to discuss what you'd like to change.
+2. Make sure to update tests as necessary.
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+This project uses the [MIT License](https://choosealicense.com/licenses/mit/).
 
-## sources used
+## Sources Used
 
-You can find the source code in this repository in `sources.md` file.
+You can find the source code in this repository's `sources.md` file.

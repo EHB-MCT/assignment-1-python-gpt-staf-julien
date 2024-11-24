@@ -13,6 +13,7 @@ def create_app():
     """
     app = Flask(__name__)
 
+    # example of how to get secret keys from `config.py`
     app.config['SECRET_KEY'] 
     app.config['DEBUG']
 
