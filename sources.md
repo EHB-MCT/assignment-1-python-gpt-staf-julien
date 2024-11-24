@@ -10,6 +10,7 @@ Here are all the sources used to create the code in this repository.
 
 ## sources for code
 
+- https://peps.python.org/pep-0008/
 - https://www.geeksforgeeks.org/flask-creating-first-simple-application/
 - https://stackoverflow.com/questions/20212894/how-do-i-get-flask-to-run-on-port-80
 - https://flask.palletsprojects.com/en/3.0.x/quickstart/
