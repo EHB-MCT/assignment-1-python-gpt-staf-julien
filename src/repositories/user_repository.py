@@ -1,6 +1,6 @@
 from typing import List, Optional
 
-class UserService:
+class UserRepository:
     def __init__(self):
         # In a real app, this might connect to a database. We'll use an in-memory store.
         self.users = {
