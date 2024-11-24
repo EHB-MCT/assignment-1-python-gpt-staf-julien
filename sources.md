@@ -14,3 +14,4 @@ Here are all the sources used to create the code in this repository.
 - https://stackoverflow.com/questions/20212894/how-do-i-get-flask-to-run-on-port-80
 - https://flask.palletsprojects.com/en/3.0.x/quickstart/
 - https://chatgpt.com/share/66f2d806-90c0-8012-82c0-e3af5bf1b462
+- https://docs.pydantic.dev/latest/concepts/models/#tldr
