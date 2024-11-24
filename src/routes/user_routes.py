@@ -1,7 +1,7 @@
-from src.services.user_service import UserService
+from src.repositories.user_repository import UserRepository
 from flask import jsonify, Blueprint, request
 
-user_service = UserService()
+user_service = UserRepository()
 
 user_controller_bp = Blueprint('user', __name__)
 
