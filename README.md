@@ -1,48 +1,33 @@
-# ChatPy
+# flask-template
+
 A simple chat back-end REST API template built with Python trying to follow the PEP8 standard and other conventions.
 
-## Up & running (optional)
+## Installation
+
 1. Open your terminal (inside VSC or PowerShel).
 2. add this comment tin the terminal : `pip install -r ./requirements.txt`.
-3. Run the project with this : `python main.py`
 
-## API endpoints
+## Usage
 
-### Users
-#### GET /users
-- Returns a list of all users in the system.
+0. Follow the installation steps above.
+1. Run the project with this : `python main.py`
 
-#### POST /users
-- Creates a new user.
-* Parameters:
-    + **name** (str): The name of the user.
-    + **email** (str): The email address of the user.
+## Support
 
-#### GET /users/{user_id}
-- Retrieves information about a specific user by ID.
+If you have any questions or need help, feel free to reach out!
+The best way to reach out is through GitHub issues.
 
-#### PUT /users/{user_id}
-- Updates information about a specific user by ID.
-  * Parameters:
-    + **name** (str): The updated name of the user.
-    + **email** (str): The updated email address of the user.
+## Contributing
 
-#### DELETE /users/{user_id}
-- Deletes a specific user by ID.
-  * Parameters:
-    + **user_id** (int): The ID of the user to delete.
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
 
-## sources
+Please make sure to update tests as appropriate.
 
-### sources for conventions
+## License
 
-- https://chatgpt.com/share/66f2d7a0-9b08-8012-9101-a3bb63dbc9a5
-- https://peps.python.org/pep-0008/
-- https://docs.python.org/2/library/unittest.html#basic-example
+[MIT](https://choosealicense.com/licenses/mit/)
 
-### sources for code
+## sources used
 
-- https://www.geeksforgeeks.org/flask-creating-first-simple-application/
-- https://stackoverflow.com/questions/20212894/how-do-i-get-flask-to-run-on-port-80
-- https://flask.palletsprojects.com/en/3.0.x/quickstart/
-- https://chatgpt.com/share/66f2d806-90c0-8012-82c0-e3af5bf1b462
+You can find the source code in this repository in `sources.md` file.
