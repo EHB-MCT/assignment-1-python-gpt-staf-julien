@@ -1,5 +1,5 @@
 from pydantic import ValidationError
-from src.repositories.user_repository import UserRepository
+from src.services.user_service import UserRepository
 from flask import jsonify, Blueprint, request
 from schemas.user_schema import CreateUserRequest, UpdateUserRequest
 
